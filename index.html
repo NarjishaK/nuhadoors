@@ -48,6 +48,217 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <style>
+        /* :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --gradient-bg: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+        } */
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h6 {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title h3 {
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 2.5rem 2rem;
+            height: 100%;
+            box-shadow: 0 5px 30px rgba(0, 123, 255, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 123, 255, 0.1);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-bg);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+
+        .feature-card:hover::before {
+            left: 0;
+            opacity: 0.05;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(0, 123, 255, 0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(0, 123, 255, 0.3);
+        }
+
+        .feature-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .feature-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-content h5 {
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            transition: color 0.4s ease;
+        }
+
+        .feature-card:hover .feature-content h5 {
+            color: var(--primary-color);
+        }
+
+        .feature-content p {
+            color: var(--secondary-color);
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .stats-section {
+            background: var(--gradient-bg);
+            color: white;
+            padding: 3rem 0;
+            margin: 4rem 0;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-100px) translateY(-100px); }
+        }
+
+        .stat-item {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .specialty-badge {
+            display: inline-block;
+            background: rgba(0, 123, 255, 0.1);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.25rem;
+            border: 1px solid rgba(0, 123, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .specialty-badge:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-slide {
+            position: relative;
+            overflow: hidden;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.4s ease;
+        }
+
+        .btn-slide:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 50px 0;
+            }
+            
+            .feature-card {
+                margin-bottom: 2rem;
+                padding: 2rem 1.5rem;
+            }
+            
+            .stats-section {
+                padding: 2rem 0;
+                margin: 2rem 0;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 
 
@@ -226,10 +437,10 @@
                 <a class="nav-link active p-0" aria-current="page" href="index.html">Home</a>
               </li>
               <li class="nav-item px-3 py-1 py-lg-0">
-                <a class="nav-link p-0" href="index.html">About</a>
+                <a class="nav-link p-0" href="#about-us">About</a>
               </li>
               <li class="nav-item px-3 py-1 py-lg-0">
-                <a class="nav-link p-0" href="index.html">Services</a>
+                <a class="nav-link p-0" href="#services">Services</a>
               </li>
               <li class="nav-item px-3 py-1 py-lg-0">
                 <a class="nav-link p-0" href="index.html">Project</a>
@@ -348,12 +559,288 @@
           <h3 class="display-6 fw-semibold mb-4">Leading Automatic Door Solutions Provider</h3>
           <p>NUHA Automatic gates and barriers trdg LLC is a leading provider of high-quality automatic door solutions, specializing in installation, maintenance, and repair services. With <span class="fw-semibold">10 years of experience</span> in the industry, our team of certified technicians ensures reliable, efficient, and secure automatic door systems for commercial, industrial, and residential clients.</p>
           
-          <p class="fw-semibold m-0">Our Mission</p>
-          <p>We pride ourselves on delivering cutting-edge technology, exceptional customer service, and customized solutions tailored to meet our clients' needs. Whether it's installing state-of-the-art automatic door systems, conducting routine maintenance, or providing swift repairs, we are your trusted partner in creating secure and accessible environments.</p>
+        <p>NUHADOORS is a specialized service and maintenance provider dedicated to automatic doors across commercial, industrial, and public sectors. With years of hands-on experience, we ensure that every door we service operates seamlessly, maximizes safety, and delivers long-term reliability.  </p>
+          <!-- <p>We pride ourselves on delivering cutting-edge technology, exceptional customer service, and customized solutions tailored to meet our clients' needs. Whether it's installing state-of-the-art automatic door systems, conducting routine maintenance, or providing swift repairs, we are your trusted partner in creating secure and accessible environments.</p> -->
           
           <a href="#services" class="btn btn-primary btn-slide hover-slide-right mt-4">
             <span>More About us</span>
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- Mission & Vision Section -->
+    <section id="mission-vision" class="section-padding bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="section-title">
+                        <h6><span class="text-primary">|</span> Our Purpose</h6>
+                        <h3 class="display-6 fw-semibold mb-5">Mission & Vision</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-5">
+                <div class="col-lg-6">
+                    <div class="mission-card">
+                            <img src="images/PHOTO-2025-07-21-15-31-49.jpg"  style="width: 500px; height: 500px;">
+                        <h4 class="mb-3"></h4>
+                        <h4 class="mb-3">Our Mission</h4>
+                        <p class="lead">To deliver top-tier automatic door care by combining technical expertise, preventative maintenance, and rapid response service—ultimately safeguarding the flow of people and goods for our clients.</p>
+                         <div class="vision-goals">
+                            <div class="goal-item">
+                                <div class="goal-number">01</div>
+                                <div class="goal-text">Technical Excellence</div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-number">02</div>
+                                <div class="goal-text">Preventative Care</div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-number">03</div>
+                                <div class="goal-text">Rapid Response</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="vision-card">
+                      <img src="images/PHOTO-2025-07-14-07-35-26 4.jpg"  style="width: 500px; height: 500px;">
+                        <h4 class="mb-3"></h4>
+                        <h4 class="mb-3">Our Vision</h4>
+                        <p class="lead">To be recognized nationally as the most trusted partner for automatic door maintenance, setting the standard for innovation, compliance, and customer satisfaction.</p>
+                        <div class="vision-goals">
+                            <div class="goal-item">
+                                <div class="goal-number">01</div>
+                                <div class="goal-text">National Recognition</div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-number">02</div>
+                                <div class="goal-text">Industry Innovation</div>
+                            </div>
+                            <div class="goal-item">
+                                <div class="goal-number">03</div>
+                                <div class="goal-text">Customer Excellence</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ <section id="services" class="section-padding">
+        <div class="container">
+            <!-- Section Title -->
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="section-title">
+                        <h6><span class="text-primary">|</span> Our Capabilities</h6>
+                        <h3 class="display-6 fw-semibold mb-4">Advanced Features & Specialized Services</h3>
+                        <p class="lead text-muted">Discover the comprehensive range of advanced features and specialized services that set NUHADOORS apart in the automatic door industry.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Grid -->
+        
+
+            <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="text-center feature-card">
+            <div class="feature-icon">
+                <svg class="text-primary me-1" width="42" height="42">
+                <use xlink:href="#check-circle"></use>
+              </svg>
+            </div>
+            <h5 class="mt-3 fw-bold">24/7 Emergency Response
+            </h5>
+            <p class="text-muted">
+              Round-the-clock emergency repair services with guaranteed response times. Our mobile service units are equipped with
+              common spare parts for immediate on-site repairs.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="text-center feature-card">
+            <div class="feature-icon">
+               <svg class="text-primary me-1" width="42" height="42">
+                <use xlink:href="#check-circle"></use>
+              </svg>
+            </div>
+            <h5 class="mt-3 fw-bold">Smart Monitoring System</h5>
+            <p class="text-muted">IoT-enabled remote monitoring with real-time diagnostics, predictive maintenance alerts, and mobile app integration for instant status updates and control.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="text-center feature-card">
+            <div class="feature-icon">
+               <svg class="text-primary me-1" width="42" height="42">
+                <use xlink:href="#check-circle"></use>
+              </svg>
+            </div>
+            <h5 class="mt-3 fw-bold">Compliance Certification</h5>
+            <p class="text-muted">Full ADA, ANSI, EN, UL and CE compliance testing with detailed documentation. We ensure all installations meet local building codes and safety regulations.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="text-center feature-card">
+            <div class="feature-icon">
+             <svg class="text-primary me-1" width="42" height="42">
+                <use xlink:href="#check-circle"></use>
+              </svg>
+            </div>
+            <h5 class="mt-3 fw-bold">Energy Efficiency Solutions</h5>
+            <p class="text-muted">Advanced sensor technology and energy-saving features that reduce operational costs by up to 40% while maintaining optimal performance and security.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="text-center feature-card">
+            <div class="feature-icon">
+             <svg class="text-primary me-1" width="42" height="42">
+                <use xlink:href="#check-circle"></use>
+              </svg>
+            </div>
+            <h5 class="mt-3 fw-bold">Access Control Integration</h5>
+            <p class="text-muted">Seamless integration with card readers, biometric systems, and smart building management platforms for enhanced security and visitor management.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="text-center feature-card">
+            <div class="feature-icon">
+             <svg class="text-primary me-1" width="42" height="42">
+                <use xlink:href="#check-circle"></use>
+              </svg>
+            </div>
+            <h5 class="mt-3 fw-bold">Performance Analytics</h5>
+            <p class="text-muted">Detailed usage analytics, maintenance history tracking, and performance reports to optimize door operations and plan preventive maintenance schedules.</p>
+          </div>
+        </div>
+      </div>
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="stat-item">
+                                <span class="stat-number">500+</span>
+                                <div class="stat-label">Projects Completed</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="stat-item">
+                                <span class="stat-number">98%</span>
+                                <div class="stat-label">Customer Satisfaction</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="stat-item">
+                                <span class="stat-number">24/7</span>
+                                <div class="stat-label">Support Available</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="stat-item">
+                                <span class="stat-number">10+</span>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specializations -->
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h4 class="mb-4">Our Specializations</h4>
+                    <div class="specialties-container">
+                        <span class="specialty-badge">Sliding Door Systems</span>
+                        <span class="specialty-badge">Revolving Door Maintenance</span>
+                        <span class="specialty-badge">Security Integration</span>
+                        <span class="specialty-badge">Fire Door Compliance</span>
+                        <span class="specialty-badge">Hospital Door Solutions</span>
+                        <span class="specialty-badge">Retail Entrance Systems</span>
+                        <span class="specialty-badge">Industrial Gate Automation</span>
+                        <span class="specialty-badge">Smart Building Integration</span>
+                        <span class="specialty-badge">Emergency Exit Systems</span>
+                        <span class="specialty-badge">Clean Room Applications</span>
+                    </div>
+                    
+                    <div class="mt-5">
+                        <a href="#contact" class="btn btn-primary btn-slide me-3">
+                            <span>Get Quote</span>
+                        </a>
+                        <a href="#services" class="btn btn-outline-primary btn-slide">
+                            <span>View Services</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <section id="#services">
+    <div class="service-block position-relative bg-secondary">
+      <div class="jarallax service-bg"
+        style="background-image: url(images/PHOTO-2025-07-14-07-35-24\ 2.jpg); background-size: cover; background-repeat: no-repeat;  background-position: center; ">
+      </div>
+      <div class="container service-content position-absolute top-50 start-50 translate-middle">
+        <div class="row align-items-center">
+          <div class="col-lg-9">
+            <h3 class="display-6 fw-semibold text-white mb-4">Installation & Supply</h3>
+            <p class="text-white">Expert installation of sliding, revolving, folding, and swing automatic doors from top brands. Our certified technicians ensure precision installation for optimal performance.</p>
+          </div>
+          <div class="col-lg-3 text-lg-end">
+            <a href="#quote" class="btn btn-outline-light service-btn">Get Installation</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="service-block position-relative bg-secondary">
+      <div class="jarallax service-bg"
+        style="background-image: url(images/PHOTO-2025-07-14-07-35-24\ 3.jpg); background-size: cover; background-repeat: no-repeat;  background-position: center; ">
+      </div>
+      <div class="container service-content position-absolute top-50 start-50 translate-middle">
+        <div class="row align-items-center">
+          <div class="col-lg-9">
+            <h3 class="display-6 fw-semibold text-white mb-4">Maintenance & Repairs</h3>
+            <p class="text-white">Routine servicing, emergency repairs, and troubleshooting for optimal performance. Our preventive maintenance ensures long-lasting and reliable door systems.</p>
+          </div>
+          <div class="col-lg-3 text-lg-end">
+            <a href="#quote" class="btn btn-outline-light service-btn">Get Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="service-block position-relative bg-secondary">
+      <div class="jarallax service-bg"
+        style="background-image: url(images/PHOTO-2025-07-14-07-35-25\ 2.jpg); background-size: cover; background-repeat: no-repeat;  background-position: center; ">
+      </div>
+      <div class="container service-content position-absolute top-50 start-50 translate-middle">
+        <div class="row align-items-center">
+          <div class="col-lg-9">
+            <h3 class="display-6 fw-semibold text-white mb-4">Custom Solutions</h3>
+            <p class="text-white">Bespoke automatic door systems for accessibility, security, and energy efficiency. Tailored solutions designed to meet your specific requirements and space constraints.</p>
+          </div>
+          <div class="col-lg-3 text-lg-end">
+            <a href="#quote" class="btn btn-outline-light service-btn">Custom Quote</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="service-block position-relative bg-secondary">
+      <div class="jarallax service-bg"
+        style="background-image: url(images/PHOTO-2025-07-14-07-35-30.jpg); background-size: cover; background-repeat: no-repeat;  background-position: center; ">
+      </div>
+      <div class="container service-content position-absolute top-50 start-50 translate-middle">
+        <div class="row align-items-center">
+          <div class="col-lg-9">
+            <h3 class="display-6 fw-semibold text-white mb-4">Upgrades & Retrofitting</h3>
+            <p class="text-white">Modernizing outdated systems with the latest technology including motion sensors, touchless access, and smart controls for enhanced security and convenience.</p>
+          </div>
+          <div class="col-lg-3 text-lg-end">
+            <a href="#quote" class="btn btn-outline-light service-btn">Upgrade Now</a>
+          </div>
         </div>
       </div>
     </div>
@@ -531,72 +1018,254 @@
     </div>
   </section>
 
-  <section id="services">
-    <div class="service-block position-relative bg-secondary">
-      <div class="jarallax service-bg"
-        style="background-image: url(images/PHOTO-2025-07-14-07-35-24\ 2.jpg); background-size: cover; background-repeat: no-repeat;  background-position: center; ">
-      </div>
-      <div class="container service-content position-absolute top-50 start-50 translate-middle">
-        <div class="row align-items-center">
-          <div class="col-lg-9">
-            <h3 class="display-6 fw-semibold text-white mb-4">Installation & Supply</h3>
-            <p class="text-white">Expert installation of sliding, revolving, folding, and swing automatic doors from top brands. Our certified technicians ensure precision installation for optimal performance.</p>
-          </div>
-          <div class="col-lg-3 text-lg-end">
-            <a href="#quote" class="btn btn-outline-light service-btn">Get Installation</a>
-          </div>
+
+    <!-- Core Values Section -->
+    <section id="core-values" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="section-title">
+                        <h6><span class="text-primary">|</span> Our Foundation</h6>
+                        <h3 class="display-6 fw-semibold mb-5">Core Values</h3>
+                        <p class="lead text-muted">The principles that guide every decision we make and every service we provide.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon safety">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h5>Safety First</h5>
+                        <p>Rigorously adhering to industry regulations and best practices to ensure the safety of all users.</p>
+                        <div class="value-highlight">Priority #1</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon reliability">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                        <h5>Reliability</h5>
+                        <p>Ensuring doors perform flawlessly when you need them, with consistent and dependable service.</p>
+                        <div class="value-highlight">99.9% Uptime</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon expertise">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h5>Expertise</h5>
+                        <p>Continuous training and certification in the latest automatic door technologies and standards.</p>
+                        <div class="value-highlight">Certified Techs</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon responsiveness">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h5>Responsiveness</h5>
+                        <p>Fast, around-the-clock support to minimize downtime and keep your operations running smoothly.</p>
+                        <div class="value-highlight">24/7 Support</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon integrity">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h5>Integrity</h5>
+                        <p>Transparent pricing and honest recommendations that build trust and long-term relationships.</p>
+                        <div class="value-highlight">Transparent</div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="value-card">
+                        <div class="value-icon innovation">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h5>Innovation</h5>
+                        <p>Embracing cutting-edge technology and modern solutions to stay ahead of industry trends.</p>
+                        <div class="value-highlight">Future Ready</div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="service-block position-relative bg-secondary">
-      <div class="jarallax service-bg"
-        style="background-image: url(images/PHOTO-2025-07-14-07-35-24\ 3.jpg); background-size: cover; background-repeat: no-repeat;  background-position: center; ">
-      </div>
-      <div class="container service-content position-absolute top-50 start-50 translate-middle">
-        <div class="row align-items-center">
-          <div class="col-lg-9">
-            <h3 class="display-6 fw-semibold text-white mb-4">Maintenance & Repairs</h3>
-            <p class="text-white">Routine servicing, emergency repairs, and troubleshooting for optimal performance. Our preventive maintenance ensures long-lasting and reliable door systems.</p>
-          </div>
-          <div class="col-lg-3 text-lg-end">
-            <a href="#quote" class="btn btn-outline-light service-btn">Get Service</a>
-          </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="section-padding bg-gradient">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="section-title text-white">
+                        <h6><span class="text-warning">|</span> The NUHADOORS Advantage</h6>
+                        <h3 class="display-6 fw-semibold mb-5">Why Choose NUHADOORS?</h3>
+                        <p class="lead">Experience the difference that expertise, dedication, and innovation make in automatic door maintenance.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="advantage-card">
+                        <div class="advantage-number">01</div>
+                        <div class="advantage-content">
+                            <h5><i class="fas fa-certificate me-2"></i>Certified Technicians</h5>
+                            <p>Our team holds manufacturer certifications and is trained in ANSI, EN, and other global safety standards, ensuring professional service every time.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="advantage-card">
+                        <div class="advantage-number">02</div>
+                        <div class="advantage-content">
+                            <h5><i class="fas fa-clipboard-list me-2"></i>Tailored Maintenance Plans</h5>
+                            <p>Customizable service agreements designed to fit your specific budget, usage patterns, and operational requirements.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="advantage-card">
+                        <div class="advantage-number">03</div>
+                        <div class="advantage-content">
+                            <h5><i class="fas fa-search me-2"></i>Proactive Approach</h5>
+                            <p>We identify potential issues before they become costly failures, saving you time, money, and preventing unexpected downtime.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="advantage-card">
+                        <div class="advantage-number">04</div>
+                        <div class="advantage-content">
+                            <h5><i class="fas fa-file-alt me-2"></i>Digital Reporting</h5>
+                            <p>Detailed service reports with photographic evidence and clear recommendations help you make informed maintenance decisions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="advantage-card">
+                        <div class="advantage-number">05</div>
+                        <div class="advantage-content">
+                            <h5><i class="fas fa-users me-2"></i>Customer-First Support</h5>
+                            <p>Dedicated account managers and friendly technical advice ensure you receive personalized attention and expert guidance.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="advantage-card">
+                        <div class="advantage-number">06</div>
+                        <div class="advantage-content">
+                            <h5><i class="fas fa-tools me-2"></i>Comprehensive Solutions</h5>
+                            <p>From emergency repairs to preventive maintenance, we offer complete automatic door solutions under one trusted roof.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="service-block position-relative bg-secondary">
-      <div class="jarallax service-bg"
-        style="background-image: url(images/PHOTO-2025-07-14-07-35-25\ 2.jpg); background-size: cover; background-repeat: no-repeat;  background-position: center; ">
-      </div>
-      <div class="container service-content position-absolute top-50 start-50 translate-middle">
-        <div class="row align-items-center">
-          <div class="col-lg-9">
-            <h3 class="display-6 fw-semibold text-white mb-4">Custom Solutions</h3>
-            <p class="text-white">Bespoke automatic door systems for accessibility, security, and energy efficiency. Tailored solutions designed to meet your specific requirements and space constraints.</p>
-          </div>
-          <div class="col-lg-3 text-lg-end">
-            <a href="#quote" class="btn btn-outline-light service-btn">Custom Quote</a>
-          </div>
+    </section>
+
+    <!-- Meet Our Team Section -->
+    <section id="meet-team" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="section-title">
+                        <h6><span class="text-primary">|</span> Our People</h6>
+                        <h3 class="display-6 fw-semibold mb-5">Meet Our Expert Team</h3>
+                        <p class="lead text-muted">Our service technicians hold manufacturer certifications and undergo continuous professional development. From field engineers to customer support, every team member embodies our commitment to excellence.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Team Member" class="img-fluid">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                    <a href="#"><i class="fas fa-phone"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h5>Ahmed Al-Rashid</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Team Member" class="img-fluid">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                    <a href="#"><i class="fas fa-phone"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h5>Ahmed Al-Rashid</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="team-card">
+                        <div class="team-image">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Team Member" class="img-fluid">
+                            <div class="team-overlay">
+                                <div class="team-social">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                    <a href="#"><i class="fas fa-phone"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-content">
+                            <h5>Ahmed Al-Rashid</h5>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="row mt-5">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="team-cta">
+                        <h4 class="mb-3">Join Our Growing Team</h4>
+                        <p class="mb-4">We're always looking for skilled technicians and customer service professionals who share our commitment to excellence.</p>
+                        <a href="#careers" class="btn btn-primary btn-slide me-3">
+                            <span>View Careers</span>
+                        </a>
+                        <a href="#contact" class="btn btn-outline-primary btn-slide">
+                            <span>Contact Us</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="service-block position-relative bg-secondary">
-      <div class="jarallax service-bg"
-        style="background-image: url(images/PHOTO-2025-07-14-07-35-30.jpg); background-size: cover; background-repeat: no-repeat;  background-position: center; ">
-      </div>
-      <div class="container service-content position-absolute top-50 start-50 translate-middle">
-        <div class="row align-items-center">
-          <div class="col-lg-9">
-            <h3 class="display-6 fw-semibold text-white mb-4">Upgrades & Retrofitting</h3>
-            <p class="text-white">Modernizing outdated systems with the latest technology including motion sensors, touchless access, and smart controls for enhanced security and convenience.</p>
-          </div>
-          <div class="col-lg-3 text-lg-end">
-            <a href="#quote" class="btn btn-outline-light service-btn">Upgrade Now</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
+
+ 
 
   <section id="quote" class="padding-small">
     <div class="container text-center">
@@ -864,8 +1533,8 @@
     <div class="container">
       <div class="d-flex justify-content-between align-items-center">
         <div>
-          <h6><span class="text-primary">|</span>Blog</h6>
-          <h3 class="display-6 fw-semibold">Recent Posts</h3>
+          <h6><span class="text-primary">|</span>Latest work</h6>
+          <h3 class="display-6 fw-semibold">Recent Works</h3>
         </div>
         <div>
           <a href="#quote" class="btn btn-primary btn-slide hover-slide-right">
@@ -878,7 +1547,7 @@
           <div class="card-item">
             <div class="card border-0 bg-transparent">
               <div class="card-image position-relative">
-                <a href="#quote"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=300&h=200&fit=crop" alt="post-img" class="post-image img-fluid"></a>
+                <a href="#quote"><img src="images/work/PHOTO-2025-07-21-14-04-37.jpg" alt="post-img" class="post-image img-fluid"></a>
               </div>
             </div>
             <div class="card-body p-0 mt-2">
@@ -894,7 +1563,7 @@
           <div class="card-item">
             <div class="card border-0 bg-transparent">
               <div class="card-image position-relative">
-                <a href="#quote"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=300&h=200&fit=crop" alt="post-img" class="post-image img-fluid"></a>
+                <a href="#quote"><img src="images/work/PHOTO-2025-07-21-13-53-52.jpg" alt="post-img" class="post-image img-fluid"></a>
               </div>
             </div>
             <div class="card-body p-0 mt-2">
@@ -910,7 +1579,7 @@
           <div class="card-item">
             <div class="card border-0 bg-transparent">
               <div class="card-image position-relative">
-                <a href="#quote"><img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=300&h=200&fit=crop" alt="post-img" class="post-image img-fluid"></a>
+                <a href="#quote"><img src="images/work/PHOTO-2025-07-21-14-04-35.jpg" alt="post-img" class="post-image img-fluid"></a>
               </div>
             </div>
             <div class="card-body p-0 mt-2">
@@ -926,7 +1595,7 @@
           <div class="card-item">
             <div class="card border-0 bg-transparent">
               <div class="card-image position-relative">
-                <a href="#quote"><img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=300&h=200&fit=crop" alt="post-img" class="post-image img-fluid"></a>
+                <a href="#quote"><img src="images/work/PHOTO-2025-07-21-14-04-46.jpg" alt="post-img" class="post-image img-fluid"></a>
               </div>
             </div>
             <div class="card-body p-0 mt-2">
@@ -941,59 +1610,86 @@
       </div>
     </div>
   </section>
-<section id="features" class="padding-small" style="background-color: #f8fafc;">
+<section id="##services" class="padding-small" style="background-color: #f8fafc;">
     <div class="container">
       <div class="text-center mb-5">
         <h6><span class="text-primary">|</span> Why Choose NUHADOORS</h6>
         <h2 class="display-6 fw-bold mb-4">Our Key Features & Benefits</h2>
         <p class="lead text-muted">Experience professional automatic door solutions with certified technicians and 24/7 support</p>
       </div>
-      <div class="row g-4">
-        <div class="col-lg-3 col-md-6">
-          <div class="text-center feature-card">
-            <div class="feature-icon">
-                <svg class="text-primary me-1" width="42" height="42">
-                <use xlink:href="#check-circle"></use>
-              </svg>
+          <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h5>24/7 Emergency Response</h5>
+                            <p>Round-the-clock emergency repair services with guaranteed response times. Our mobile service units are equipped with common spare parts for immediate on-site repairs.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h5>Smart Monitoring System</h5>
+                            <p>IoT-enabled remote monitoring with real-time diagnostics, predictive maintenance alerts, and mobile app integration for instant status updates and control.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h5>Compliance Certification</h5>
+                            <p>Full ADA, ANSI, EN, UL and CE compliance testing with detailed documentation. We ensure all installations meet local building codes and safety regulations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h5>Energy Efficiency Solutions</h5>
+                            <p>Advanced sensor technology and energy-saving features that reduce operational costs by up to 40% while maintaining optimal performance and security.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h5>Access Control Integration</h5>
+                            <p>Seamless integration with card readers, biometric systems, and smart building management platforms for enhanced security and visitor management.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h5>Performance Analytics</h5>
+                            <p>Detailed usage analytics, maintenance history tracking, and performance reports to optimize door operations and plan preventive maintenance schedules.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h5 class="mt-3 fw-bold">Certified Technicians</h5>
-            <p class="text-muted">Highly trained and experienced professionals in all major automatic door brands with continuous certification updates.</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="text-center feature-card">
-            <div class="feature-icon">
-               <svg class="text-primary me-1" width="42" height="42">
-                <use xlink:href="#check-circle"></use>
-              </svg>
-            </div>
-            <h5 class="mt-3 fw-bold">24/7 Emergency Support</h5>
-            <p class="text-muted">Quick response for urgent repairs to minimize downtime with round-the-clock availability for critical situations.</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="text-center feature-card">
-            <div class="feature-icon">
-             <svg class="text-primary me-1" width="42" height="42">
-                <use xlink:href="#check-circle"></use>
-              </svg>
-            </div>
-            <h5 class="mt-3 fw-bold">Quality Assurance</h5>
-            <p class="text-muted">Premium-grade materials and compliance with safety standards including ANSI, ADA, and local regulations.</p>
-          </div>
-        </div>
-        <div class="col-lg-3 col-md-6">
-          <div class="text-center feature-card">
-            <div class="feature-icon">
-             <svg class="text-primary me-1" width="42" height="42">
-                <use xlink:href="#check-circle"></use>
-              </svg>
-            </div>
-            <h5 class="mt-3 fw-bold">Customer-Centric Approach</h5>
-            <p class="text-muted">Transparent pricing, comprehensive warranties, and personalized service tailored to your specific needs.</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -1308,7 +2004,113 @@
 
     </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Intersection Observer for animations
+        const observerOptionss = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
+        const observers = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptionss);
+
+        // Observe all animated elements
+        document.querySelectorAll('.mission-card, .vision-card, .value-card, .advantage-card, .team-card').forEach(el => {
+            observers.observe(el);
+        });
+
+        // Team card hover effects
+        document.querySelectorAll('.team-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.querySelector('.team-image img').style.transform = 'scale(1.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.querySelector('.team-image img').style.transform = 'scale(1)';
+            });
+        });
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Add smooth scrolling animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Counter animation for stats
+        function animateCounter(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = Math.floor(progress * (end - start) + start);
+                element.textContent = current + (element.textContent.includes('%') ? '%' : (element.textContent.includes('+') ? '+' : ''));
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Animate counters when stats section is visible
+        const statsSection = document.querySelector('.stats-section');
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stat-number');
+                    counters.forEach(counter => {
+                        const text = counter.textContent;
+                        const isPercentage = text.includes('%');
+                        const isPlus = text.includes('+');
+                        const value = parseInt(text.replace(/[^0-9]/g, ''));
+                        
+                        if (isPercentage) {
+                            counter.textContent = '0%';
+                            animateCounter(counter, 0, value, 2000);
+                        } else if (isPlus) {
+                            counter.textContent = '0+';
+                            animateCounter(counter, 0, value, 2000);
+                        } else if (text.includes('/')) {
+                            counter.textContent = '24/7';
+                        } else {
+                            counter.textContent = '0+';
+                            animateCounter(counter, 0, value, 2000);
+                        }
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+    </script>
+    
   <script src="js/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript" src="js/plugins.js"></script>
