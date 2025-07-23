@@ -597,28 +597,285 @@ svg.play-icon {
 }
 
 
-/* 4.5 Project Section
-/*----------------------------------------------*/
-.swiper-slide.swiper-width {
-  width: auto !important;
-}
-
-.project-content .portfolio-img {
-  transition: all 0.5s ease-in-out;
-}
-
-.project-content:hover .portfolio-img {
-  opacity: 0.3;
-}
-
-.portfolio-description {
-  opacity: 0;
-  transition: all 0.5s ease-in-out;
-}
-
-.project-content:hover .portfolio-description {
-  opacity: 1;
-}
+ #project {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .text-primary {
+            color: #007bff !important;
+        }
+        
+        /* Button styles */
+        .btn-slide {
+            position: relative;
+            overflow: hidden;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-slide:hover {
+            transform: translateX(5px);
+        }
+        
+        /* Swiper customization */
+        .project-swiper {
+            padding-bottom: 50px;
+        }
+        
+        .swiper-slide.swiper-width {
+            width: auto !important;
+            margin-right: 20px;
+        }
+        
+        /* Project content */
+        .project-content {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+            min-width: 250px;
+            cursor: pointer;
+        }
+        
+        .project-content .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        .project-content:hover .portfolio-img {
+            opacity: 0.3;
+            transform: scale(1.05);
+        }
+        
+        .portfolio-description {
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        .project-content:hover .portfolio-description {
+            opacity: 1;
+        }
+        
+        .portfolio-description h4 {
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .portfolio-description a {
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        .portfolio-description a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Swiper pagination */
+        .swiper-pagination {
+            position: static !important;
+            margin-top: 30px;
+        }
+        
+        .swiper-pagination-bullet {
+            background-color: #007bff;
+            opacity: 0.3;
+            margin: 0 5px;
+        }
+        
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+        }
+        
+        /* Responsive Design */
+        
+        /* Large screens (1200px and up) */
+        @media (min-width: 1200px) {
+            .project-content {
+                min-width: 300px;
+                height: 350px;
+            }
+            
+            .swiper-slide.swiper-width {
+                margin-right: 30px;
+            }
+        }
+        
+        /* Medium screens (768px to 1199px) */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            #project {
+                padding: 40px 0;
+            }
+            
+            .project-content {
+                min-width: 280px;
+                height: 320px;
+            }
+            
+            .swiper-slide.swiper-width {
+                margin-right: 20px;
+            }
+            
+            .portfolio-description h4 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        /* Small screens (576px to 767px) */
+        @media (min-width: 576px) and (max-width: 767px) {
+            #project {
+                padding: 30px 0;
+            }
+            
+            .d-flex.justify-content-between {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .project-content {
+                min-width: 260px;
+                height: 280px;
+            }
+            
+            .swiper-slide.swiper-width {
+                margin-right: 15px;
+            }
+            
+            .portfolio-description h4 {
+                font-size: 1.2rem;
+            }
+            
+            .btn-slide {
+                padding: 10px 25px;
+                font-size: 14px;
+            }
+        }
+        
+        /* Extra small screens (up to 575px) */
+        @media (max-width: 575px) {
+            #project {
+                padding: 20px 0;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .d-flex.justify-content-between {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .display-6 {
+                font-size: 1.5rem !important;
+            }
+            
+            .project-content {
+                min-width: 220px;
+                height: 250px;
+            }
+            
+            .swiper-slide.swiper-width {
+                margin-right: 10px;
+            }
+            
+            .portfolio-description h4 {
+                font-size: 1.1rem;
+                margin-bottom: 10px;
+            }
+            
+            .portfolio-description a {
+                font-size: 12px;
+            }
+            
+            .btn-slide {
+                padding: 8px 20px;
+                font-size: 13px;
+            }
+            
+            .swiper-pagination {
+                margin-top: 20px;
+            }
+            
+            .swiper-pagination-bullet {
+                width: 8px;
+                height: 8px;
+                margin: 0 3px;
+            }
+        }
+        
+        /* Very small screens (up to 350px) */
+        @media (max-width: 350px) {
+            .project-content {
+                min-width: 200px;
+                height: 220px;
+            }
+            
+            .portfolio-description h4 {
+                font-size: 1rem;
+            }
+            
+            .display-6 {
+                font-size: 1.3rem !important;
+            }
+            
+            h6 {
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .project-content:hover .portfolio-img {
+                opacity: 1;
+                transform: none;
+            }
+            
+            .project-content:hover .portfolio-description {
+                opacity: 0;
+            }
+            
+            .project-content:active .portfolio-img {
+                opacity: 0.3;
+                transform: scale(1.02);
+            }
+            
+            .project-content:active .portfolio-description {
+                opacity: 1;
+            }
+        }
+        
+        /* Accessibility improvements */
+        .project-content:focus {
+            outline: 2px solid #007bff;
+            outline-offset: 2px;
+        }
+        
+        .project-content:focus .portfolio-img {
+            opacity: 0.3;
+        }
+        
+        .project-content:focus .portfolio-description {
+            opacity: 1;
+        }
+        
+        /* Reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            .project-content .portfolio-img,
+            .portfolio-description,
+            .btn-slide {
+                transition: none;
+            }
+        }
 
 
 
