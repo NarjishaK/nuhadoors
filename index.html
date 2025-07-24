@@ -892,6 +892,37 @@
               </div>
               <div class="author-detail mt-4 d-flex align-items-center">
                 <div class="author-text">
+                  <h5 class="name mb-0">James Rodrigo</h6>
+                    <div class="review-star d-flex mt-2">
+                      <svg class="star me-1 text-warning" width="16" height="16">
+                        <use xlink:href="#star" />
+                      </svg>
+                      <svg class="star me-1 text-warning" width="16" height="16">
+                        <use xlink:href="#star" />
+                      </svg>
+                      <svg class="star me-1 text-warning" width="16" height="16">
+                        <use xlink:href="#star" />
+                      </svg>
+                      <svg class="star me-1 text-warning" width="16" height="16">
+                        <use xlink:href="#star" />
+                      </svg>
+                      <svg class="star me-1 text-warning" width="16" height="16">
+                        <use xlink:href="#star" />
+                      </svg>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="review-item">
+              <div class="review">
+                <blockquote class="mb-0">
+                  <p class="mb-0">“Nuha Doors provided exceptional service! Their automatic door maintenance is top-notch, ensuring smooth and reliable operation. Highly recommend for anyone needing expert care.”</p>
+                </blockquote>
+              </div>
+              <div class="author-detail mt-4 d-flex align-items-center">
+                <div class="author-text">
                   <h5 class="name mb-0">John Doe</h6>
                     <div class="review-star d-flex mt-2">
                       <svg class="star me-1 text-warning" width="16" height="16">
@@ -2062,8 +2093,76 @@
         });
     </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<!-- FAQ -->
+       <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
 
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        function animateCounter(element, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                const current = Math.floor(progress * (end - start) + start);
+                element.textContent = current + (element.textContent.includes('%') ? '%' : (element.textContent.includes('+') ? '+' : ''));
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        const statsSection = document.querySelector('.stats-section');
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.stat-number');
+                    counters.forEach(counter => {
+                        const text = counter.textContent;
+                        const isPercentage = text.includes('%');
+                        const isPlus = text.includes('+');
+                        const value = parseInt(text.replace(/[^0-9]/g, ''));
+
+                        if (isPercentage) {
+                            counter.textContent = '0%';
+                            animateCounter(counter, 0, value, 2000);
+                        } else if (isPlus) {
+                            counter.textContent = '0+';
+                            animateCounter(counter, 0, value, 2000);
+                        } else if (text.includes('/')) {
+                            counter.textContent = '24/7';
+                        } else {
+                            counter.textContent = '0+';
+                            animateCounter(counter, 0, value, 2000);
+                        }
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
     <script>
         // Initialize Swiper
