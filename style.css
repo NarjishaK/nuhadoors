@@ -485,6 +485,13 @@ a.nav-link {
   font-family: var(--heading-font);
   transition: all 0.3s ease-in-out;
 }
+body.offcanvas-open {
+  overflow: hidden;
+}
+body.offcanvas-backdrop {
+  overflow: auto !important;
+  filter: none !important;
+}
 
 a.nav-link::after {
   content: "";
